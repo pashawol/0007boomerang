@@ -296,6 +296,22 @@ function eventHandler() {
 			prevEl: '.headerBlock .swiper-button-prev'
 		}
 	})); // modal window
+	//luckyone js
+
+	$('.faq-header-js').click(function () {
+		var self = this;
+		$('.faq-header-js').each(function () {
+			if (this === self) {
+				$(this.parentElement).find('.faq-content-js').slideToggle(function () {
+					$(this).toggleClass('active');
+				});
+			} else {
+				$(this.parentElement).find('.faq-content-js').slideUp(function () {
+					$(this).removeClass('active');
+				});
+			}
+		});
+	}); //end luckyone js
 }
 
 ;

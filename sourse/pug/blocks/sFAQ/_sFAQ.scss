@@ -1,15 +1,47 @@
+// start .sFAQ
+.sFAQ {
+	--sPT: #{rem(37)};
+	--sPB: #{rem(74)};
+	--sTPB: #{rem(33)};
 
-	// start .sFAQ
-	.sFAQ {
-		 
-	@include media-breakpoint-up(xl) {}
-	@include media-breakpoint-up(lg) {}
-	@include media-breakpoint-up(md) {}
-	@include media-breakpoint-up(sm) {}
-	//
-	@include media-breakpoint-between(md, xl) { }
-	//
-	@include media-breakpoint-only(xl) {}
-	//
-	@include media-breakpoint-down(xl) {}
+	.section-title{
+		text-transform: uppercase;
+		font-weight: 700;
+	}
+
+	&__items{
+		border-bottom: 1px solid $gray-300;
+		&:first-child{
+			border-top: 1px solid $gray-300;
+		}
+
+
+	}
+	&__item{
+		padding: 15px 0 12px;
+	}
+	&__header{
+		@include mt();
+		cursor: pointer;
+
+		color: $body-color;
+		&:hover{
+			color: $primary;
+		}
+
+		font-weight: 700;
+	}
+	&__content{
+		display: none;
+		&.active{
+			display: block;
+		}
+
+		padding: 15px 0;
+		font-size: $small;
+		color: $gray-700;
+	}
+	&__{}
+	&__{}
+	&__{}
 } // end.sFAQ

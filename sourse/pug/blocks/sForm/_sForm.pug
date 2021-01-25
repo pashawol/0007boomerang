@@ -2,8 +2,23 @@ mixin sForm()
 	// start sForm
 	+b.SECTION.sForm.section#sForm&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 sForm
-				
-			.row
+			+e.main-row.row
+				.col-lg-6
+					+e.img
+						img(loading="lazy" src="img/@2x/form-img.jpg" alt="")
+				.col-lg-6
+					+b.section-title
+						h2 ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ
+					+form-wrap()
+						+input('Имя*', 'text', undefined, 'name')
+						+input('E-mail', 'email')
+						+input('Телефон*', 'tel')
+						+input('Сообщение', 'textarea', undefined, 'message')
+						+e.row.row
+							.col-12.col-sm-auto
+								+e.btn(type="submit") Отправить
+							+e.policy-col.col
+								| Нажимая на кнопку "Отправить", я даю своё согласие на обработку персональных данных согласно
+								|
+								a(href='#') политике конфиденциальности
 	// end sForm

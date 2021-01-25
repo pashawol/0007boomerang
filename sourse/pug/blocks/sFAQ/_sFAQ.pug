@@ -2,8 +2,18 @@ mixin sFAQ(data)
 	// start sFAQ
 	+b.SECTION.sFAQ.section#sFAQ&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 sFAQ
-				
-			.row
+			+b.section-title
+				h2.text-primary вопрос-ответ
+			+e.items
+				+faqItem('Для вашего удобства мы подготовили удобный онлайн-калькулятор стоимости?')
+				+faqItem('Для начала выберите тип автомобиля?')
+				+faqItem('Для вашего удобства мы подготовили удобный онлайн-калькулятор стоимости?')
+				+faqItem('Программа сразу же предложит оптимальный комплекс детейлинг услуг для сохранения вида вашего автомобиля?')
+				+faqItem('Для вашего удобства мы подготовили удобный онлайн-калькулятор стоимости?')
+				+faqItem('Для начала выберите тип автомобиля?')
 	// end sFAQ
+
+mixin faqItem(title)
+	+e.item
+		+e.header.faq-header-js=title
+		+e.content.faq-content-js Lorem ipsum dolor sit amet, consectetur adipisicing elit. A animi aperiam cum dicta dolore earum, eligendi enim est exercitationem harum illo illum iusto magnam magni maxime, nemo nostrum odit officiis quae quibusdam reiciendis sapiente sunt veniam! Ad, at beatae consequatur consequuntur deleniti dicta est expedita inventore molestias nostrum odit tempore?

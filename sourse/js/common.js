@@ -308,6 +308,26 @@ function eventHandler() {
 	});
 	// modal window
 
+	//luckyone js
+	$('.faq-header-js').click(function (){
+		let self = this;
+
+		$('.faq-header-js').each(function (){
+			if (this === self){
+				$(this.parentElement).find('.faq-content-js').slideToggle(function (){
+					$(this).toggleClass('active');
+				});
+			}
+			else{
+				$(this.parentElement).find('.faq-content-js').slideUp(function (){
+					$(this).removeClass('active');
+				})
+			}
+		})
+	})
+
+	//end luckyone js
+
 };
 if (document.readyState !== 'loading') {
 	eventHandler();

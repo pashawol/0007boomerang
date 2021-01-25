@@ -1,2 +1,66 @@
 mixin footer()
-	footer.footer
+  footer.footer
+    +footTop()
+    +footBot()
+
+mixin footTop()
+  +b.footTop
+    .container
+      +e.main-row.row
+        .col-sm-6.col-lg-3.col-xl-2
+          +e.logo(href="#")
+            img(loading="lazy" src="img/@2x/logo.png" alt="")
+          +e.txt.text-center.d-inline-block
+            | Работаем
+            br
+            | круглосуточно
+        .col-sm-6.col-lg-3.offset-xl-1
+          +e.link(href='tel:+79122444999')
+            +e.icon
+              img(loading="lazy" src="img/@2x/tell-icon.png" alt="")
+            .txt +79122444999
+        .col-sm-6.col-lg-3
+          +e.link--loc(href='#')
+            +e.icon
+              img(loading="lazy" src="img/@2x/loc-icon.png" alt="")
+            .txt
+              | г.Екатеринбург
+              br
+              | ул. Восточная дом 5 корпус Б2
+        .col-sm-6.col-lg-3.col-xl-2.offset-xl-1
+          +e.link--mail(href='mail:info@boomer66.ru')
+            +e.icon
+              img(loading="lazy" src="img/@2x/mail-icon.png" alt="")
+            .txt info@boomer66.ru
+
+mixin footBot()
+  +b.footBot.bg-warning
+    .container
+      +e.main-row.row.align-items-center
+        .col-auto
+          +e.img-row.row
+            +fotImgCol(1)
+            +fotImgCol(2)
+            +fotImgCol(3)
+        +e.links-col.col-12.col-xl.order-last.order-xl-0
+          +e.link(href="#") Политика конфедециальности
+          +e.link(href="#") Пользовательское соглашение
+        .col-auto
+          +e.soc-row.row
+            +footSoc('wifi-img')
+            +footSoc('fb-m')
+            +footSoc('wt')
+            +footSoc('fb')
+            +footSoc('insta')
+            +footSoc('vk')
+            +footSoc('youtube')
+
+mixin fotImgCol(imgName)
+  .col-auto
+    +e.img-link(href='#')
+      img(loading="lazy" src=`img/@2x/footer-img-${imgName}.png` alt="")
+
+mixin footSoc(imgName)
+  .col-auto
+    +e.soc-link(href='#')
+      img(loading="lazy" src=`img/@2x/${imgName}.png` alt="")
