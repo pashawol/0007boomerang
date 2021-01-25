@@ -2,8 +2,57 @@ mixin sCalc(data)
 	// start sCalc
 	+b.SECTION.sCalc.section#sCalc&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 sCalc
-				
+			+b.section-title
+				h2 Цены на услуги
+			p Для вашего удобства мы&nbsp;подготовили удобный онлайн-калькулятор стоимости услуг нашей детейлинг студии. Для начала выберите тип автомобиля: он&nbsp;только выехал из&nbsp;салона или уже откатал несколько десятков, а, может, даже сотен тысяч километров? Программа сразу&nbsp;же предложит оптимальный комплекс детейлинг услуг для сохранения внешнего вида вашего автомобиля на&nbsp;долгие годы или&nbsp;же, наоборот, для восстановления его былого лоска.
+			form
+				.row
+					.col-lg-3
+						.fw-500.mb-3 ТИП ВАШЕГО АВТО:
+					.col-lg-9
+						+e.row.row
+							mixin radio(i,t)
+								+e.col.col-sm-4.col-6
+									+b.LABEL.radio-btn
+										input(type="radio" name="car" data-value= i)&attributes(attributes)
+										+icon(i)
+										+e.title= t
+							+radio(`sedan`,`седан`)(checked)
+							+radio(`suv`,`внедорожник`)
+							+radio(`truck`,`фургон`)
+							+radio(`hatchback`,`хэтчбек`)
+							+radio(`universal`,`универсал`)
+							+radio(`bus`,`минивен`)
+			+e.img-wrap
+				+pic(`sedan`,'',0)(id="sedan").tab-img.d-block
+				+pic(`suv`,'',0)(id="suv").tab-img
+				+pic(`truck`,'',0)(id="truck").tab-img
+				+pic(`hatchback`,'',0)(id="hatchback").tab-img
+				+pic(`universal`,'',0)(id="universal").tab-img
+				+pic(`bus`,'',0)(id="bus").tab-img
 			.row
+				.col-lg-3
+					.ttu.fw-500.mb-3 выберите услугу:
+				.col-lg-9
+					+e.body
+						mixin item(t)
+							+b.accordion-item
+								+e.toggle--js= t
+									+icon('chevron-right')
+								+e.block
+									+in-c("radio",'Защитное покрытие – ЖИДКОЕ СТЕКЛО')
+									+in-c("radio",'Защитное покрытие – Керамическая защита')
+						+item("комплексная МОЙКА")
+						+item("МОЙКА кузова")
+						+item("МОЙКА салона")
+						+item("химчистка салона")
+						+item("защитное покрытие кузова")
+						+item("мойка двигателя")
+						+item("дезинфекция салона")
+						+item("полировка")
+						+b.total-block
+							+e.title Итоговая сумма:
+							+e.price 850Р
+							+e.btn(href="#") Записаться
+
 	// end sCalc
