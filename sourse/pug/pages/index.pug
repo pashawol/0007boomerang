@@ -3,6 +3,10 @@ extends layout/main.pug
 
 include ../blocks/sContent/_sContent.pug
 include ../blocks/sContact/_sContact.pug
+include ../blocks/sAbout/_sAbout.pug
+include ../blocks/sCategories/_sCategories.pug
+include ../blocks/sCalc/_sCalc.pug
+include ../blocks/sFAQ/_sFAQ.pug
 
 block variables
 	- let  mainPage= null
@@ -12,11 +16,13 @@ block title
 block pagecontent
 
 	+mob-mnu()
-	+header()
 	+top-nav()
-	+in-c("checkbox", "text")
-	+topLine() 
-	+headerBlock()
+	+headerBlock().pt-0
+	+sAbout
+	+sCategories
+	+sCalc
+	+sContent
+	+sFAQ
 	+sForm()
 	+sContact()
 	+footer()

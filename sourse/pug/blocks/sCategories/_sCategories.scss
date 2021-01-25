@@ -1,0 +1,31 @@
+
+	// start .sCategories
+	.sCategories {
+		.row{
+			margin-left: 0;
+			margin-right: 0;
+		}
+		&__col{
+			margin-bottom: 0;
+			color: #ffffff;
+			padding: rem(47) rem(27);
+			background-color: #595959;
+			picture{
+				opacity: 0.8;
+			}
+		}
+		&__title{
+			border-bottom: 2px solid #27b3ec;
+		}
+		 
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	//
+	@include media-breakpoint-between(md, xl) { }
+	//
+	@include media-breakpoint-only(xl) {}
+	//
+	@include media-breakpoint-down(xl) {}
+} // end.sCategories

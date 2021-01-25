@@ -1,17 +1,47 @@
 // start .headerBlock
 .headerBlock {
 	margin-bottom: 1px;
-	min-height: 100vh;
-	min-height: calc(var(--vh, 1vh) * 100);
-	// background-image: url(../img);
-	// background-color: #000000;
-
-	h1 {
-		margin-bottom: 1px;
+	position: relative;
+	overflow: hidden;
+	&__control{
+		position: relative;
 	}
+	--h: #{rem(470)};
+	.swiper-button-hand{
+		top: calc(var(--h) / 2);
+		margin-top: calc(-1 * #{rem(32)});
+		z-index: 10;
+		.icon{
+			color: var(--swiperBorderColorDef);
+		}
+	}
+	&__slide{
+		min-height: rem(470);
+		padding-top: rem(92);
 
-	h2 {
-		margin-bottom: 1px;
+	}
+	&__block{
+		// height: 285px;
+		background-color: rgba($color: #031e2f, $alpha: .39); 
+		@include media-breakpoint-up(md) {
+			
+			width: 405px;
+			padding: rem(40) rem(56);
+		}
+		padding: rem(20) rem(16);
+	}
+	&__title{
+		@include rfs(28px);
+		font-weight: 300;
+		color: #ffffff;
+		text-transform: uppercase;
+		margin-bottom: rem(30);
+		line-height: normal;
+	}
+	&__btn{
+		@extend .btn;
+		@extend .btn-warning;
+		width: rem(160);
 	}
 
 	@include media-breakpoint-up(xl) {}

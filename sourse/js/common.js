@@ -242,18 +242,18 @@ function eventHandler() {
 	// JSCCommon.CustomInputFile(); 
 	var x = window.location.host;
 	let screenName;
-	screenName = 'main.jpg';
+	screenName = 'main.png';
 	if (screenName && x.includes("localhost:30")) {
 		document.body.insertAdjacentHTML("beforeend", `<div class="pixel-perfect" style="background-image: url(screen/${screenName});"></div>`);
 	}
 
 	function whenResize() {
-		const topH = document.querySelector("header ").offsetHeight;
-		if ($(window).scrollTop() > topH) {
-			document.querySelector('.top-nav  ').classList.add('fixed');
-		} else {
-			document.querySelector('.top-nav  ').classList.remove('fixed');
-		}
+		// const topH = document.querySelector("header ").offsetHeight;
+		// if ($(window).scrollTop() > topH) {
+		// 	document.querySelector('.top-nav  ').classList.add('fixed');
+		// } else {
+		// 	document.querySelector('.top-nav  ').classList.remove('fixed');
+		// }
 
 	}
 
@@ -273,18 +273,15 @@ function eventHandler() {
 		watchOverflow: true,
 		spaceBetween: 0,
 		loop: true,
-		navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev',
-		},
-		pagination: {
-			el: ' .swiper-pagination',
-			type: 'bullets',
-			clickable: true,
-			// renderBullet: function (index, className) {
-			// 	return '<span class="' + className + '">' + (index + 1) + '</span>';
-			// }
-		},
+	
+		// pagination: {
+		// 	el: ' .swiper-pagination',
+		// 	type: 'bullets',
+		// 	clickable: true,
+		// 	// renderBullet: function (index, className) {
+		// 	// 	return '<span class="' + className + '">' + (index + 1) + '</span>';
+		// 	// }
+		// },
 	}
 
 	const swiper4 = new Swiper('.sBanners__slider--js', {
@@ -297,6 +294,17 @@ function eventHandler() {
 		slideToClickedSlide: true,
 		freeModeMomentum: true,
 
+	});
+	// modal window
+
+	const swiper5 = new Swiper('.headerBlock__slider--js', {
+		// slidesPerView: 5,
+		...defaultSl,
+		slidesPerView: 1,
+		navigation: {
+			nextEl: '.headerBlock .swiper-button-next',
+			prevEl: '.headerBlock .swiper-button-prev',
+		},
 	});
 	// modal window
 

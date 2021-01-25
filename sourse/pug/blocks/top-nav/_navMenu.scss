@@ -1,14 +1,32 @@
 .navMenu{
-	display: flex;
+	@include media-breakpoint-up(lg) {
+
+		display: flex;
+		margin-left: rem(-15);
+		margin-left: auto;
+		margin-right: rem(-15);
+		padding-right: 0;
+	}
 	list-style: none;
-	@include roww(20px);
+	// @include roww(20px);
 	position: relative;
 	margin-bottom: 0;
-	max-width: 100%;
+	// max-width: 100%;
 	flex-wrap: wrap;
+	// justify-content: flex-end;
+ 
+	justify-content: space-between;
+	padding-top: rem(8);
 	&__link{
 		display: block;
-		text-align: center;
-		padding: rem(20) rem(10);
+		@include media-breakpoint-up(lg) {
+
+			text-align: center;
+		}
+		padding: rem(10) rem(15);
+		color: #ffffff;
+		font-size: $small;
+		font-weight: 500;
+		text-transform: uppercase;
 	}
 }

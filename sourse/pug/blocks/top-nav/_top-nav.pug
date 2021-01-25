@@ -12,19 +12,49 @@ mixin mob-mnu()
 		+b.toggle-menu-mobile--js
 			span
 		+e.inner
+			.container
+				+e.logo(href="/")
+					img(src="img/@2x/logo.png", alt="") 
+				br
 		
-			+mnu()
-			.text-right
+				+mnu()
+				+b.top-nav.block-with-lazy 
+					br
+					+e.addr
+						+icon('mark')
+						| г.Екатеринбург <br> ул. Восточная дом 5&nbsp;корпус&nbsp;Б2
+					br 
+					+e.tel(href="tel:+79122444999")
+						+icon('tel')
+						| +79122444999
+					br 
+					br 
+					+e.btn(href="#") Заказать звонок
 	//  мобильное меню
 mixin top-nav() 
 	// start top-nav
 	+b.top-nav.block-with-lazy
 		.container
-			.row
+			+e.row-main.row
 				.col-auto.d-lg-none
 					+b.toggle-menu-mobile--js
 						span
-				.col
-					+mnu()
+				.col-auto
+					+e.logo(href="/")
+						img(src="img/@2x/logo.png", alt="")
+				+e.right-col.col
+					+e.row.row
+						.col-auto.d-none.d-md-block
+							+e.addr
+								+icon('mark')
+								| г.Екатеринбург <br> ул. Восточная дом 5&nbsp;корпус&nbsp;Б2
+						.col-auto
+							+e.tel(href="tel:+79122444999")
+								+icon('tel')
+								.d-none.d-sm-block +79122444999
+						.col-auto.d-none.d-sm-block
+							+e.btn(href="#") Заказать звонок
+					.d-none.d-lg-block
+						+mnu()
 					
 	// end top-nav

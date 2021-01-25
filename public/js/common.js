@@ -253,20 +253,18 @@ function eventHandler() {
 
 	var x = window.location.host;
 	var screenName;
-	screenName = 'main.jpg';
+	screenName = 'main.png';
 
-	if (screenName && x === "localhost:3000") {
+	if (screenName && x.includes("localhost:30")) {
 		document.body.insertAdjacentHTML("beforeend", "<div class=\"pixel-perfect\" style=\"background-image: url(screen/".concat(screenName, ");\"></div>"));
 	}
 
-	function whenResize() {
-		var topH = document.querySelector("header ").offsetHeight;
-
-		if ($(window).scrollTop() > topH) {
-			document.querySelector('.top-nav  ').classList.add('fixed');
-		} else {
-			document.querySelector('.top-nav  ').classList.remove('fixed');
-		}
+	function whenResize() {// const topH = document.querySelector("header ").offsetHeight;
+		// if ($(window).scrollTop() > topH) {
+		// 	document.querySelector('.top-nav  ').classList.add('fixed');
+		// } else {
+		// 	document.querySelector('.top-nav  ').classList.remove('fixed');
+		// }
 	}
 
 	window.addEventListener('resize', function () {
@@ -281,17 +279,7 @@ function eventHandler() {
 			loadPrevNext: true
 		},
 		watchOverflow: true
-	}, _defineProperty(_defaultSl, "spaceBetween", 0), _defineProperty(_defaultSl, "loop", true), _defineProperty(_defaultSl, "navigation", {
-		nextEl: '.swiper-button-next',
-		prevEl: '.swiper-button-prev'
-	}), _defineProperty(_defaultSl, "pagination", {
-		el: ' .swiper-pagination',
-		type: 'bullets',
-		clickable: true // renderBullet: function (index, className) {
-		// 	return '<span class="' + className + '">' + (index + 1) + '</span>';
-		// }
-
-	}), _defaultSl);
+	}, _defineProperty(_defaultSl, "spaceBetween", 0), _defineProperty(_defaultSl, "loop", true), _defaultSl);
 	var swiper4 = new Swiper('.sBanners__slider--js', _objectSpread(_objectSpread({}, defaultSl), {}, {
 		slidesPerView: 'auto',
 		freeMode: true,
@@ -299,6 +287,14 @@ function eventHandler() {
 		touchRatio: 0.2,
 		slideToClickedSlide: true,
 		freeModeMomentum: true
+	})); // modal window
+
+	var swiper5 = new Swiper('.headerBlock__slider--js', _objectSpread(_objectSpread({}, defaultSl), {}, {
+		slidesPerView: 1,
+		navigation: {
+			nextEl: '.headerBlock .swiper-button-next',
+			prevEl: '.headerBlock .swiper-button-prev'
+		}
 	})); // modal window
 }
 

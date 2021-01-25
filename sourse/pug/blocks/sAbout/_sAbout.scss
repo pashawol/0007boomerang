@@ -1,0 +1,29 @@
+
+	// start .sAbout
+	.sAbout {
+		background-color: rgba($color: $primary, $alpha: 1);
+		--sPT: #{rem(60)};
+		--sPB: #{rem(50)};
+		color: #ffffff;
+		.row{
+			align-items: center;
+		}
+		p{
+			font-weight: 300;
+			line-height: normal;
+		}
+		h2{
+			@extend .h1;
+		}
+		 
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	//
+	@include media-breakpoint-between(md, xl) { }
+	//
+	@include media-breakpoint-only(xl) {}
+	//
+	@include media-breakpoint-down(xl) {}
+} // end.sAbout
