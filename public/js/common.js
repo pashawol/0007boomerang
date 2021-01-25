@@ -295,7 +295,17 @@ function eventHandler() {
 			nextEl: '.headerBlock .swiper-button-next',
 			prevEl: '.headerBlock .swiper-button-prev'
 		}
-	})); // modal window
+	}));
+	$(".radio-btn input").click(function () {
+		var id = $(this).data('value');
+		$("#" + id).addClass('d-block').siblings().removeClass('d-block');
+	}); // modal window
+
+	$(".accordion-item__toggle--js").click(function () {
+		$(this).next().slideToggle(function () {
+			$(this).parent().toggleClass('active');
+		});
+	});
 }
 
 ;

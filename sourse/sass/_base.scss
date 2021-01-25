@@ -116,6 +116,13 @@ body {
 
 .section-title {
 	padding-bottom: var(--sTPB);
+	h2{
+		text-transform: uppercase;
+		color: $primary;
+		font-weight: bold;
+		@extend .h1;
+
+	}
 }
 
 

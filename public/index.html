@@ -341,10 +341,232 @@
 				<!-- start sCalc-->
 				<section class="sCalc section" id="sCalc">
 					<div class="container">
-						<div class="section-title text-center">
-							<h2>sCalc</h2>
+						<div class="section-title">
+							<h2>Цены на услуги</h2>
 						</div>
-						<div class="row"></div>
+						<p>Для вашего удобства мы&nbsp;подготовили удобный онлайн-калькулятор стоимости услуг нашей детейлинг студии. Для начала выберите тип автомобиля: он&nbsp;только выехал из&nbsp;салона или уже откатал несколько десятков, а, может, даже сотен тысяч километров? Программа сразу&nbsp;же предложит оптимальный комплекс детейлинг услуг для сохранения внешнего вида вашего автомобиля на&nbsp;долгие годы или&nbsp;же, наоборот, для восстановления его былого лоска.</p>
+						<form>
+							<div class="row">
+								<div class="col-lg-3">
+									<div class="fw-500 mb-3">ТИП ВАШЕГО АВТО:</div>
+								</div>
+								<div class="col-lg-9">
+									<div class="sCalc__row row">
+										<div class="sCalc__col col-sm-4 col-6">
+											<label class="radio-btn">
+												<input type="radio" name="car" data-value="sedan" checked="checked"/>
+												<svg class="icon icon-sedan ">
+													<use xlink:href="img/svg/sprite.svg#sedan"></use>
+												</svg><span class="radio-btn__title">седан</span>
+											</label>
+										</div>
+										<div class="sCalc__col col-sm-4 col-6">
+											<label class="radio-btn">
+												<input type="radio" name="car" data-value="suv"/>
+												<svg class="icon icon-suv ">
+													<use xlink:href="img/svg/sprite.svg#suv"></use>
+												</svg><span class="radio-btn__title">внедорожник</span>
+											</label>
+										</div>
+										<div class="sCalc__col col-sm-4 col-6">
+											<label class="radio-btn">
+												<input type="radio" name="car" data-value="truck"/>
+												<svg class="icon icon-truck ">
+													<use xlink:href="img/svg/sprite.svg#truck"></use>
+												</svg><span class="radio-btn__title">фургон</span>
+											</label>
+										</div>
+										<div class="sCalc__col col-sm-4 col-6">
+											<label class="radio-btn">
+												<input type="radio" name="car" data-value="hatchback"/>
+												<svg class="icon icon-hatchback ">
+													<use xlink:href="img/svg/sprite.svg#hatchback"></use>
+												</svg><span class="radio-btn__title">хэтчбек</span>
+											</label>
+										</div>
+										<div class="sCalc__col col-sm-4 col-6">
+											<label class="radio-btn">
+												<input type="radio" name="car" data-value="universal"/>
+												<svg class="icon icon-universal ">
+													<use xlink:href="img/svg/sprite.svg#universal"></use>
+												</svg><span class="radio-btn__title">универсал</span>
+											</label>
+										</div>
+										<div class="sCalc__col col-sm-4 col-6">
+											<label class="radio-btn">
+												<input type="radio" name="car" data-value="bus"/>
+												<svg class="icon icon-bus ">
+													<use xlink:href="img/svg/sprite.svg#bus"></use>
+												</svg><span class="radio-btn__title">минивен</span>
+											</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</form>
+						<div class="sCalc__img-wrap">
+							<!-- picture-->
+							<picture class="tab-img d-block" id="sedan"> 
+								<noscript class="loading-lazy">
+									<source type="image/webp" srcset="img/@2x/webp/sedan.webp"/><img src="img/@2x/sedan.jpg" alt="" loading="lazy"/>
+								</noscript>
+							</picture>
+							<!-- /picture-->
+							<!-- picture-->
+							<picture class="tab-img" id="suv"> 
+								<noscript class="loading-lazy">
+									<source type="image/webp" srcset="img/@2x/webp/suv.webp"/><img src="img/@2x/suv.jpg" alt="" loading="lazy"/>
+								</noscript>
+							</picture>
+							<!-- /picture-->
+							<!-- picture-->
+							<picture class="tab-img" id="truck"> 
+								<noscript class="loading-lazy">
+									<source type="image/webp" srcset="img/@2x/webp/truck.webp"/><img src="img/@2x/truck.jpg" alt="" loading="lazy"/>
+								</noscript>
+							</picture>
+							<!-- /picture-->
+							<!-- picture-->
+							<picture class="tab-img" id="hatchback"> 
+								<noscript class="loading-lazy">
+									<source type="image/webp" srcset="img/@2x/webp/hatchback.webp"/><img src="img/@2x/hatchback.jpg" alt="" loading="lazy"/>
+								</noscript>
+							</picture>
+							<!-- /picture-->
+							<!-- picture-->
+							<picture class="tab-img" id="universal"> 
+								<noscript class="loading-lazy">
+									<source type="image/webp" srcset="img/@2x/webp/universal.webp"/><img src="img/@2x/universal.jpg" alt="" loading="lazy"/>
+								</noscript>
+							</picture>
+							<!-- /picture-->
+							<!-- picture-->
+							<picture class="tab-img" id="bus"> 
+								<noscript class="loading-lazy">
+									<source type="image/webp" srcset="img/@2x/webp/bus.webp"/><img src="img/@2x/bus.jpg" alt="" loading="lazy"/>
+								</noscript>
+							</picture>
+							<!-- /picture-->
+						</div>
+						<div class="row">
+							<div class="col-lg-3">
+								<div class="ttu fw-500 mb-3">выберите услугу:</div>
+							</div>
+							<div class="col-lg-9">
+								<div class="sCalc__body">
+									<div class="accordion-item">
+										<div class="accordion-item__toggle accordion-item__toggle--js">комплексная МОЙКА
+											<svg class="icon icon-chevron-right ">
+												<use xlink:href="img/svg/sprite.svg#chevron-right"></use>
+											</svg>
+										</div>
+										<div class="accordion-item__block">
+											<label class="custom-input form-check"><input class="custom-input__input form-check-input" name="radio" type="radio"/><span class="custom-input__text form-check-label">Защитное покрытие – ЖИДКОЕ СТЕКЛО</span>
+											</label>
+											<label class="custom-input form-check"><input class="custom-input__input form-check-input" name="radio" type="radio"/><span class="custom-input__text form-check-label">Защитное покрытие – Керамическая защита</span>
+											</label>
+										</div>
+									</div>
+									<div class="accordion-item">
+										<div class="accordion-item__toggle accordion-item__toggle--js">МОЙКА кузова
+											<svg class="icon icon-chevron-right ">
+												<use xlink:href="img/svg/sprite.svg#chevron-right"></use>
+											</svg>
+										</div>
+										<div class="accordion-item__block">
+											<label class="custom-input form-check"><input class="custom-input__input form-check-input" name="radio" type="radio"/><span class="custom-input__text form-check-label">Защитное покрытие – ЖИДКОЕ СТЕКЛО</span>
+											</label>
+											<label class="custom-input form-check"><input class="custom-input__input form-check-input" name="radio" type="radio"/><span class="custom-input__text form-check-label">Защитное покрытие – Керамическая защита</span>
+											</label>
+										</div>
+									</div>
+									<div class="accordion-item">
+										<div class="accordion-item__toggle accordion-item__toggle--js">МОЙКА салона
+											<svg class="icon icon-chevron-right ">
+												<use xlink:href="img/svg/sprite.svg#chevron-right"></use>
+											</svg>
+										</div>
+										<div class="accordion-item__block">
+											<label class="custom-input form-check"><input class="custom-input__input form-check-input" name="radio" type="radio"/><span class="custom-input__text form-check-label">Защитное покрытие – ЖИДКОЕ СТЕКЛО</span>
+											</label>
+											<label class="custom-input form-check"><input class="custom-input__input form-check-input" name="radio" type="radio"/><span class="custom-input__text form-check-label">Защитное покрытие – Керамическая защита</span>
+											</label>
+										</div>
+									</div>
+									<div class="accordion-item">
+										<div class="accordion-item__toggle accordion-item__toggle--js">химчистка салона
+											<svg class="icon icon-chevron-right ">
+												<use xlink:href="img/svg/sprite.svg#chevron-right"></use>
+											</svg>
+										</div>
+										<div class="accordion-item__block">
+											<label class="custom-input form-check"><input class="custom-input__input form-check-input" name="radio" type="radio"/><span class="custom-input__text form-check-label">Защитное покрытие – ЖИДКОЕ СТЕКЛО</span>
+											</label>
+											<label class="custom-input form-check"><input class="custom-input__input form-check-input" name="radio" type="radio"/><span class="custom-input__text form-check-label">Защитное покрытие – Керамическая защита</span>
+											</label>
+										</div>
+									</div>
+									<div class="accordion-item">
+										<div class="accordion-item__toggle accordion-item__toggle--js">защитное покрытие кузова
+											<svg class="icon icon-chevron-right ">
+												<use xlink:href="img/svg/sprite.svg#chevron-right"></use>
+											</svg>
+										</div>
+										<div class="accordion-item__block">
+											<label class="custom-input form-check"><input class="custom-input__input form-check-input" name="radio" type="radio"/><span class="custom-input__text form-check-label">Защитное покрытие – ЖИДКОЕ СТЕКЛО</span>
+											</label>
+											<label class="custom-input form-check"><input class="custom-input__input form-check-input" name="radio" type="radio"/><span class="custom-input__text form-check-label">Защитное покрытие – Керамическая защита</span>
+											</label>
+										</div>
+									</div>
+									<div class="accordion-item">
+										<div class="accordion-item__toggle accordion-item__toggle--js">мойка двигателя
+											<svg class="icon icon-chevron-right ">
+												<use xlink:href="img/svg/sprite.svg#chevron-right"></use>
+											</svg>
+										</div>
+										<div class="accordion-item__block">
+											<label class="custom-input form-check"><input class="custom-input__input form-check-input" name="radio" type="radio"/><span class="custom-input__text form-check-label">Защитное покрытие – ЖИДКОЕ СТЕКЛО</span>
+											</label>
+											<label class="custom-input form-check"><input class="custom-input__input form-check-input" name="radio" type="radio"/><span class="custom-input__text form-check-label">Защитное покрытие – Керамическая защита</span>
+											</label>
+										</div>
+									</div>
+									<div class="accordion-item">
+										<div class="accordion-item__toggle accordion-item__toggle--js">дезинфекция салона
+											<svg class="icon icon-chevron-right ">
+												<use xlink:href="img/svg/sprite.svg#chevron-right"></use>
+											</svg>
+										</div>
+										<div class="accordion-item__block">
+											<label class="custom-input form-check"><input class="custom-input__input form-check-input" name="radio" type="radio"/><span class="custom-input__text form-check-label">Защитное покрытие – ЖИДКОЕ СТЕКЛО</span>
+											</label>
+											<label class="custom-input form-check"><input class="custom-input__input form-check-input" name="radio" type="radio"/><span class="custom-input__text form-check-label">Защитное покрытие – Керамическая защита</span>
+											</label>
+										</div>
+									</div>
+									<div class="accordion-item">
+										<div class="accordion-item__toggle accordion-item__toggle--js">полировка
+											<svg class="icon icon-chevron-right ">
+												<use xlink:href="img/svg/sprite.svg#chevron-right"></use>
+											</svg>
+										</div>
+										<div class="accordion-item__block">
+											<label class="custom-input form-check"><input class="custom-input__input form-check-input" name="radio" type="radio"/><span class="custom-input__text form-check-label">Защитное покрытие – ЖИДКОЕ СТЕКЛО</span>
+											</label>
+											<label class="custom-input form-check"><input class="custom-input__input form-check-input" name="radio" type="radio"/><span class="custom-input__text form-check-label">Защитное покрытие – Керамическая защита</span>
+											</label>
+										</div>
+									</div>
+									<div class="total-block">
+										<div class="total-block__title">Итоговая сумма:
+										</div>
+										<div class="total-block__price">850Р
+										</div><a class="total-block__btn" href="#">Записаться</a>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</section>
 				<!-- end sCalc-->
@@ -417,7 +639,7 @@
 		<!-- end modals-->
 		<script src="libs/loading-attribute-polyfill/loading-attribute-polyfill.min.js"></script>
 		<!-- modal libs-->
-		<script src="libs/jquery/jquery.slim.min.js"></script>
+		<script src="libs/jquery/jquery.min.js"></script>
 		<script src="libs/@fancyapps/fancybox/jquery.fancybox.min.js"></script>
 		<!-- modal libs-->
 		<!-- slider libs-->
