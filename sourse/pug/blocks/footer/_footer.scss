@@ -19,7 +19,7 @@
 	}
 
 	&__logo{
-		display: block;
+		display: inline-block;
 
 		width: 138px;
 		@include media-breakpoint-up(xl){
