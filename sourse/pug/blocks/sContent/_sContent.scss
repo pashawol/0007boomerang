@@ -4,6 +4,12 @@
 	--sPB: #{rem(37)};
 	--sTPB: #{rem(25)};
 
+	.container{
+		@include media-breakpoint-up(xl){
+			max-width: 1140px;
+		}
+	}
+
 	.section-title{
 		& > *:last-child{
 			margin-bottom: 0;
@@ -29,15 +35,21 @@
 			height: 100% !important;
 		}
 
-		margin-bottom: rem(23);
+		margin-bottom: rem(14);
 	}
 	&__video-descr{
 		color: $body-color;
 		font-weight: 300;
-		margin-bottom: 59px;
-		@include media-breakpoint-down(sm){
-			font-size: 14px;
+		line-height: 1.25;
+
+		font-size: 14px;
+		margin-bottom: rem(40);
+		@include media-breakpoint-up(sm){
+			margin-bottom: rem(58);
+			font-size: 18px;
+			line-height: 1.2;
 		}
+
 	}
 	//tabs
 	&__tabs-cation{
@@ -97,6 +109,7 @@
 	}
 
 	&__more-btn{
+		margin-top: 5px;
 		padding: 7px 0;
 		cursor: pointer;
 
@@ -119,6 +132,7 @@
 
 	}
 	&__btn-txt{
+		line-height: 1;
 		color: $primary;
 		font-size: $small;
 		font-weight: 700;

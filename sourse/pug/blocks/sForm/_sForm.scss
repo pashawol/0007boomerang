@@ -1,10 +1,17 @@
 // start .sForm
 .sForm {
-	--sPT: #{rem(70)};
-	--sPB: #{rem(37)};
-	--sTPB: #{rem(29)};
+	--sPT: #{rem(65)};
+	--sPB: #{rem(30)};
+	--sTPB: #{rem(19)};
 
 	border-bottom: 10px solid $warning;
+
+	.container{
+		@include media-breakpoint-up(xl){
+			max-width: 1140px;
+		}
+	}
+
 
 	&__main-row{
 		@include roww(30px);
@@ -32,6 +39,8 @@
 			color: $dark-blue;
 			font-weight: 700;
 			text-transform: uppercase;
+
+			font-size: rem(24);
 		}
 	}
 
@@ -70,6 +79,7 @@
 				min-width: 200px;
 			}
 			@include media-breakpoint-up(xl){
+				margin-top: 5px;
 				min-width: 255px;
 			}
 

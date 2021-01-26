@@ -1,6 +1,7 @@
 .footTop{
 	background-color: $dark-blue;
-	padding: rem(37) 0 rem(40);
+	padding: rem(37) 0 rem(26);
+
 
 	&__main-row{
 		@include roww(30px);
@@ -16,8 +17,14 @@
 			align-items: center;
 		}
 	}
+
 	&__logo{
 		display: block;
+
+		width: 138px;
+		@include media-breakpoint-up(xl){
+			margin-left: 10px;
+		}
 
 		img{
 			width: auto;
@@ -25,11 +32,16 @@
 			max-width: 100%;
 		}
 
-		margin-bottom: rem(31);
+		margin-bottom: rem(30);
 	}
 	&__txt{
 		color: #a3c2d0;
 		text-transform: uppercase;
+		font-size: 16px;
+		line-height: 1.2;
+		@include media-breakpoint-up(xl){
+			padding-left: 10px;
+		}
 	}
 	//link
 	&__link{
@@ -87,7 +99,13 @@
 
 .footBot{
 	background-color: $warning;
-	padding: 15px 0;
+	padding: 13px 0;
+
+	.container{
+		@include media-breakpoint-up(xl){
+			max-width: 1140px;
+		}
+	}
 
 	&__main-row{
 		@include roww(30px);
