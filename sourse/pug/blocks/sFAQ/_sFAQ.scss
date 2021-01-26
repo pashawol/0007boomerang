@@ -5,20 +5,27 @@
 	--sTPB: #{rem(33)};
 
 	.section-title{
+		& > *:last-child{
+			margin-bottom: 0;
+		}
+
 		text-transform: uppercase;
 		font-weight: 700;
 	}
 
 	&__items{
-		border-bottom: 1px solid $gray-300;
-		&:first-child{
-			border-top: 1px solid $gray-300;
-		}
-
 
 	}
 	&__item{
+		@include media-breakpoint-down(sm){
+			font-size: $small;
+		}
 		padding: 15px 0 12px;
+
+		border-bottom: 2px solid $gray-300;
+		&:first-child{
+			border-top: 2px solid $gray-300;
+		}
 	}
 	&__header{
 		@include mt();

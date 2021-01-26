@@ -2,8 +2,45 @@ mixin sContent()
 	// start sContent
 	+b.SECTION.sContent.section#sContent&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 sContent
-				
-			.row
+			+b.section-title
+				h2.text-primary название видео или другой заголовок
+			+e.video
+				iframe(width="560" height="315" src="https://www.youtube.com/embed/LKy_yfePDQk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+			+e.video-descr Для вашего удобства мы подготовили удобный онлайн-калькулятор стоимости услуг нашей детейлинг студии. Для начала выберите тип автомобиля: он только выехал из салона или уже откатал несколько десятков, а, может, даже сотен тысяч километров? Программа сразу же предложит оптимальный комплекс детейлинг услуг для сохранения внешнего вида вашего автомобиля на долгие годы или же, наоборот, для восстановления его былого лоска.
+			.tabs
+				+e.tabs-cation.tabs__caption
+					+sContentTBtn('мойка')(class='active')
+					+sContentTBtn('химчистка')
+					+sContentTBtn('дезинфекция')
+					+sContentTBtn('полировка')
+				.tabs__wrap
+					+tabsContent(1)(class='active')
+					+tabsContent(2)
+					+tabsContent(3)
+					+tabsContent(4)
 	// end sContent
+
+mixin sContentTBtn(name)
+	+e.btn.tabs__btn&attributes(attributes)=name
+
+mixin tabsContent(number)
+	.tabs__content.tabs__content--js&attributes(attributes)
+		block
+		+e.galery-row.row
+			+galeryRowItem(number)
+			+galeryRowItem(number)
+			+galeryRowItem(number)
+			+galeryRowItem(number)
+		+e.galery-row--hidden.hidden-row-js.row
+			+galeryRowItem(number)
+			+galeryRowItem(number)
+			+galeryRowItem(number)
+			+galeryRowItem(number)
+		+e.more-btn.show-more-js
+			+e.btn-txt показать ещё
+			img(loading="lazy" src="img/@2x/more-icon.png" alt="")
+
+mixin galeryRowItem(number)
+	.col-6.col-lg-3
+		+e.img-link(href=`img/@2x/stab-${number}.png` data-fancybox=`tabGalery${number}`)
+			img(loading="lazy" src=`img/@2x/stab-${number}.png` alt="")

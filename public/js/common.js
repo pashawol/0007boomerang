@@ -123,28 +123,26 @@ var JSCCommon = {
 	// /mobileMenu
 	// tabs  .
 	tabscostume: function tabscostume(tab) {
-		var tabs = {
-			Btn: [].slice.call(document.querySelectorAll(".tabs__btn")),
-			BtnParent: [].slice.call(document.querySelectorAll(".tabs__caption")),
-			Content: [].slice.call(document.querySelectorAll(".tabs__content"))
-		};
-		tabs.Btn.forEach(function (element, index) {
-			element.addEventListener('click', function () {
-				if (!element.classList.contains('active')) {
-					var siblings = element.parentNode.querySelector(".tabs__btn.active");
-					var siblingsContent = tabs.Content[index].parentNode.querySelector(".tabs__content.active");
-					siblings.classList.remove('active');
-					siblingsContent.classList.remove('active');
-					element.classList.add('active');
-					tabs.Content[index].classList.add('active');
-				}
-			});
-		}); // $('.' + tab + '__caption').on('click', '.' + tab + '__btn:not(.active)', function (e) {
-		// 	$(this)
-		// 		.addClass('active').siblings().removeClass('active')
-		// 		.closest('.' + tab).find('.' + tab + '__content').hide().removeClass('active')
-		// 		.eq($(this).index()).fadeIn().addClass('active');
-		// });
+		// let tabs = {
+		// 	Btn: [].slice.call(document.querySelectorAll(`.tabs__btn`)),
+		// 	BtnParent: [].slice.call(document.querySelectorAll(`.tabs__caption`)),
+		// 	Content: [].slice.call(document.querySelectorAll(`.tabs__content`)),
+		// }
+		// tabs.Btn.forEach((element, index) => {
+		// 	element.addEventListener('click', () => {
+		// 		if (!element.classList.contains('active')) {
+		// 			let siblings = element.parentNode.querySelector(`.tabs__btn.active`);
+		// 			let siblingsContent = tabs.Content[index].parentNode.querySelector(`.tabs__content.active`);
+		// 			siblings.classList.remove('active');
+		// 			siblingsContent.classList.remove('active')
+		// 			element.classList.add('active');
+		// 			tabs.Content[index].classList.add('active');
+		// 		}
+		// 	})
+		// })
+		$('.' + tab + '__caption').on('click', '.' + tab + '__btn:not(.active)', function (e) {
+			$(this).addClass('active').siblings().removeClass('active').closest('.' + tab).find('.' + tab + '__content').hide().removeClass('active').eq($(this).index()).fadeIn().addClass('active');
+		});
 	},
 	// /tabs
 	inputMask: function inputMask() {
@@ -244,7 +242,7 @@ function eventHandler() {
 
 	JSCCommon.ifie();
 	JSCCommon.modalCall();
-	JSCCommon.tabscostume('.tabs--js');
+	JSCCommon.tabscostume('tabs');
 	JSCCommon.mobileMenu();
 	JSCCommon.inputMask();
 	JSCCommon.sendForm();
@@ -295,8 +293,17 @@ function eventHandler() {
 			nextEl: '.headerBlock .swiper-button-next',
 			prevEl: '.headerBlock .swiper-button-prev'
 		}
-	})); // modal window
-	//luckyone js
+	}));
+	$(".radio-btn input").click(function () {
+		var id = $(this).data('value');
+		$("#" + id).addClass('d-block').siblings().removeClass('d-block');
+	}); // modal window
+
+	$(".accordion-item__toggle--js").click(function () {
+		$(this).next().slideToggle(function () {
+			$(this).parent().toggleClass('active');
+		});
+	}); //luckyone js
 
 	$('.faq-header-js').click(function () {
 		var self = this;
@@ -311,6 +318,12 @@ function eventHandler() {
 				});
 			}
 		});
+	}); //show more
+
+	$('.show-more-js').click(function () {
+		$(this).fadeOut();
+		$(this).closest('.tabs__content--js').find('.hidden-row-js').addClass('active');
+		$(this).closest('.tabs__content--js').find('.hidden-row-js').slideDown(function () {});
 	}); //end luckyone js
 }
 
